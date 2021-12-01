@@ -11,10 +11,6 @@ var movies = [
   {title: 'The Matrix'}
 ];
 
-
-
-
-
 const App = (props) => (
   <div id = "root">
     <h1>yr girl kv's list of movies</h1>
