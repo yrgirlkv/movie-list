@@ -1,4 +1,6 @@
 import React from 'react';
+import MovieList from './MovieList.jsx'
+import SearchBar from './SearchBar.jsx'
 
 var movies = [
   {title: 'Mean Girls'},
@@ -9,17 +11,18 @@ var movies = [
   {title: 'The Matrix'}
 ];
 
-const MovieList = (props) => (
-  props.movies.map((movie, index) =>
-  <li key = {index}>{movie.title}</li>
-  )
-);
+
+
+
 
 const App = (props) => (
   <div id = "root">
     <h1>yr girl kv's list of movies</h1>
     <div>
-      <MovieList movies={movies} />
+      <SearchBar />
+    </div>
+    <div>
+      <MovieList movies = {movies} />
     </div>
   </div>
 );
