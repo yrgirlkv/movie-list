@@ -6,7 +6,7 @@ const SearchBar = (props) => (
     <input
       type="text"
       placeholder="Search..."
-      onChange = {props.handleInput} />
+      onChange = {props.handleSearchText} />
     <button type="submit">Search</button>
     <br />
     <br />
