@@ -54,17 +54,12 @@ class App extends React.Component {
     this.setState((state) => {
       let stash = state.movies;
       if (state.newMovie) {
-        return {movies: [...stash, {title: state.newMovie}]}
+        return {
+          movies: [...stash, {title: state.newMovie}],
+          displayedMovies: [...stash, {title: state.newMovie}]
+        }
       }
     })
-    console.log('test');
-    this.setState((state) => {
-      return {displayedMovies: this.state.movies
-      // .filter((entry) => {
-      //   let searchEntry = entry.title.toLowerCase();
-      //   return searchEntry.includes('');
-      // })
-    }})
   }
 
   render () {
