@@ -16,7 +16,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       searchField: '',
-      movies: movies
+      movies: movies,
+      filteredMovies: movies
     }
   }
 
@@ -28,9 +29,16 @@ class App extends React.Component {
 
   handleSearch = (event) => {
     event.preventDefault();
-
+    console.log(this.state.searchField)
+    let searchInput = this.state.searchField.toLowerCase();
+    this.setState({
+      filteredMovies: this.state.movies.filter((entry) => {
+        let searchEntry = entry.title.toLowerCase();
+        searchEntry.includes(searchInput);
+      })
+    })
+    console.log(this.state.filteredMovies);
   }
-
 
   render () {
     return (
@@ -43,12 +51,11 @@ class App extends React.Component {
           />
         </div>
         <div>
-          <MovieList movies = {this.movies} />
+          <MovieList movies = {this.state.filteredMovies} />
         </div>
       </div>
     )
   }
 }
-
 
 export default App;
