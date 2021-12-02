@@ -34,7 +34,7 @@ class App extends React.Component {
     this.setState({
       filteredMovies: this.state.movies.filter((entry) => {
         let searchEntry = entry.title.toLowerCase();
-        searchEntry.includes(searchInput);
+        return searchEntry.includes(searchInput);
       })
     })
     console.log(this.state.filteredMovies);
@@ -51,7 +51,7 @@ class App extends React.Component {
           />
         </div>
         <div>
-          <MovieList movies = {this.state.filteredMovies} />
+          <MovieList movies = {this.state.filteredMovies.length !== 0 ? this.state.filteredMovies : [{title: 'No entries found'}]} />
         </div>
       </div>
     )
